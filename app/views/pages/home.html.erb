@@ -1,17 +1,23 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <link rel = 'stylesheets' href = 'style.css'>
+
 </head>
-
-
 <body>
-  <h1 > A tribute to our kuku lover </h1>
-  <h2 style = 'color:yellow;'> Please take a look at the members without whom this was not possible. </h2>
-  <h1>  <%= link_to 'Alpha Blog', articles_path %> | <%= link_to 'Click here', about_path %> </h1>
 
+  <div class="center jumbotron">
+    <h1 class="display-4" >KUKU LOVER</h1>
 
-  <img src = 'vishnu_kukulover.jfif' alt = 'Hey' width = '300' height = '400'>
-  <img src = 'kuku.PNG' alt = 'Hey' width = '300' height = '400'>
+    <h2 class="lead">
+      A tribute to the kuku lover
+    </h2>
+    <img src = 'vishnu_kukulover.jfif' alt = 'Hey' width = '300' height = '400' >
+    <img src = 'kuku.PNG' alt = 'Hey' width = '300' height = '400'> <br> <br>
+
+    <h2 class='lead'> All this couldn't be possible without the team, please <%= link_to 'Click here', about_path,
+      class: 'link_color' %> to go to teams page.</h2>
+    <%= link_to 'Sign up', '#', class: 'btn btn-hover btn-lg btn-xlarge ' %>
+  </div>
+
 </body>
 </html>
