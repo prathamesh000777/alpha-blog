@@ -1,11 +1,14 @@
 <br>
-<h1 align='center'><strong> Title: <%= @article.title %> </strong></h2>
+<h1 align='center'><strong> Title: <%= @article.title %> </strong></h1>
 
 <div class='row'>
   <div class='offset-md-2 col-md-8'>
     <div class='card'>
       <div class='card-heading'>
-        <h4 class='card-header'><strong>Description</strong></h4>
+        <div class='card-header' style='overflow: hidden;'>
+          <h4 style='float:left'><strong> Description </strong> </h4>
+          <p style='float:right'> created by <%= @article.user.username if @article.user %> </p>
+        </div>
         <div class='card-body'>
           <%= simple_format(@article.description) %>
         </div>
