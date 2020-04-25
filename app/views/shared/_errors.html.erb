@@ -5,7 +5,7 @@
         <div class='card-heading'>
           <h2 class='card-header' style='color: white;'>
             <%= pluralize(obj.errors.count, 'error') %>
-            prohibited this article from being saved:
+            prohibited this <%= obj.class.name.downcase %> from being saved:
           </h2>
           <div class='card-body'>
             <ul>
