@@ -2,17 +2,21 @@
 <div class='row'>
   <div class='col-md-8 offset-md-2'>
     <div class='card card-body bg-light'>
-      <div >
-        <p style='font-weight: bold ; font-size:1.5em; float:left'><%= link_to article.title, article_path(article) %> </p>
-        <p style='font-size:1em; float: right'> created by <%= article.user.username if article.user %> </p>
+      <h1 class = 'center' style='font-weight: bold'><%= link_to article.title, article_path(article) %> </h1>
+      <div>
+        <% if article.user %>
+          <p style='font-size:1em; float: left'> -by <%= link_to article.user.username, user_path(article.user) %> </p>
+        <% end %>
+        <p style='font-size:0.7em; float: right'>Created <%= time_ago_in_words(article.created_at) %> ago
+                      edited <%= time_ago_in_words(article.updated_at) %> ago</p>
       </div>
       <div class='article-body'>
         <%= truncate(article.description,length: 100) %>
       </div>
       <div class='article-actions'>
-        <%= link_to 'Edit this article', edit_article_path(article), class: 'btn btn-xs btn-primary' %>
+        <%= link_to 'Edit this article', edit_article_path(article), class: 'btn btn-xs btn-outline-primary' %>
         <%= link_to 'Delete this article', article_path(article), method: :delete,
-                      data: {confirm: 'Are you sure you want to delete this article?'}, class: 'btn btn-md btn-danger' %>
+                      data: {confirm: 'Are you sure you want to delete this article?'}, class: 'btn btn-md btn-outline-danger' %>
       </div>
     </div>
     <br>

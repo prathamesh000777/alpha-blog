@@ -7,7 +7,10 @@
       <div class='card-heading'>
         <div class='card-header' style='overflow: hidden;'>
           <h4 style='float:left'><strong> Description </strong> </h4>
-          <p style='float:right'> created by <%= @article.user.username if @article.user %> </p>
+          <p style='float:right'>
+             created by <%= @article.user.username if @article.user %>
+             <%= link_to gravatar_for(@article.user, size: 40), user_path(@article.user) %>
+          </p>
         </div>
         <div class='card-body'>
           <%= simple_format(@article.description) %>
